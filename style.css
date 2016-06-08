@@ -1,0 +1,204 @@
+body {
+	background-image: url("background.jpg");
+}
+a:link, a:visited {
+	text-decoration:none;
+	color:white;
+    font-weight:bold; 
+}
+
+a:hover {
+    text-decoration:none;
+    color:black;
+}
+
+#Welcome {
+	margin: 0;
+	color: white;
+	font-family: "Century Gothic", Calibri, serif;
+	font-size:102px;
+	text-align:center;
+	font-weight:bold;
+	margin: 15%;
+	margin-top: 0%;
+	margin-bottom: 0%;
+}
+
+video {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	min-width: 100%;
+	min-height: 100%;
+	width: auto;
+	height: auto;
+	z-index: -100;
+	transform: translateX(-50%) translateY(-50%);
+	transition: 1s opacity;
+}
+
+#shop {
+    text-align:center;
+    background:brown;
+    padding:10px;
+    width:40%;
+    margin: auto;
+	margin-top: 2%;
+    margin-bottom: 2%;
+    font-family:'Century Gothic';
+	font-size: 80px;
+}
+
+#header {
+    background-color:black;
+    color:white;
+    padding:10px;
+	padding-top:20px;
+	font-family: "Century Gothic";
+	font-size:100px;
+	font-weight: bold;
+	text-decoration: none;
+	text-align: center;
+}
+
+#search {
+	color:white;
+	font-weight: bold;
+	font-family: "Century Gothic";
+	background-color:brown;
+	padding:10px;
+}
+
+#nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: brown;
+}
+
+#nav ul:active{
+    background-color:black; 
+}
+
+#nav li {
+    float: left;
+}
+
+#nav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-family:"Century Gothic";
+    font-weight:bold;
+}
+
+#nav li a:hover:not(.active) {
+    background-color: black;
+}
+
+#nav li a.active {
+    color: white;
+    background-color: black;
+}
+
+#products {
+	background-color:brown;
+	border: none;
+	height: auto;
+	margin: 30px;
+	padding: 5px;
+	width: auto;
+    font-family: "Century Gothic", Calibri, serif;
+    text-align:center;
+    
+}
+
+#products td {
+   text-align:center;
+}
+
+#products h2 {
+    width:300px;
+    margin:15px;
+    text-align:center;
+
+}
+#products p{
+    width:300px;
+    margin:15px;
+	text-align:justify;
+
+}
+
+#productinfo {
+	background-color:brown;
+	border: none;
+	height: auto;
+	margin: 30px;
+	padding: 5px;
+	width: auto;
+    font-family: "Century Gothic", Calibri, serif;
+    text-align:left;
+    
+}
+
+#productinfo td {
+   text-align:left;
+}
+
+#productinfo h1 h2 h3{
+    width:300px;
+    margin:15px;
+    text-align:left;
+
+}
+#productinfo p{
+    width:300px;
+    margin:15px;
+	text-align:left;
+
+}
+
+#gototop {
+    text-align:center;
+    background:brown;
+    padding:10px;
+    width:100px;
+    margin: auto;
+    border-radius:20px;
+    font-family:'Century Gothic';
+}
+
+#gototop:hover {
+    text-align:center;
+    font-family:'Century Gothic';
+
+
+}
+
+#footer {
+	background-color: brown;
+	text-align: center;
+	font-family: "Century Gothic";
+	color: black;
+	padding-top:10px;
+	margin-top:20px;
+}
+#copyright {
+	background-color: black;
+	color:white;
+	font-family: "Century Gothic";
+	padding:10px;
+	text-align: center;
+}
+#cookies {
+	background-color: black;
+	color:white;
+	font-family: "Century Gothic";
+	font-size:11px;
+	padding:10px;
+	text-align: center;
+}

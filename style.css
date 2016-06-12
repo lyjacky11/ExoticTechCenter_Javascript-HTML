@@ -1,6 +1,7 @@
 body {
-	background-image: url("background.jpg");
+	background-image: url("background.jpg");	
 }
+
 a:link, a:visited {
 	text-decoration:none;
 	color:white;
@@ -108,7 +109,7 @@ video {
 	background-color:brown;
 	border: none;
 	height: auto;
-	margin: 30px;
+	margin-bottom:20px;
 	padding: 5px;
 	width: auto;
     font-family: "Century Gothic", Calibri, serif;
@@ -118,6 +119,8 @@ video {
 
 #products td {
    text-align:center;
+   
+   
 }
 
 #products h2 {
@@ -137,16 +140,18 @@ video {
 	background-color:brown;
 	border: none;
 	height: auto;
-	margin: 30px;
+	margin: 15px;
+	margin-left:0px;
+	margin-right:0px;
 	padding: 5px;
 	width: auto;
     font-family: "Century Gothic", Calibri, serif;
     text-align:left;
-    
+	
 }
 
 #productinfo td {
-   text-align:left;
+    text-align:left;
 }
 
 #productinfo h1 h2 h3{
@@ -157,9 +162,47 @@ video {
 }
 #productinfo p{
     width:300px;
-    margin:15px;
 	text-align:left;
+}
 
+#title {
+	background-color:black;
+	font-family: "Century Gothic", Calibri, serif;
+	margin-top:20px;
+	padding:5px;
+	text-align:center;
+	font-size: 34px;
+	color:white;
+}
+
+#related {
+	background-color:brown;
+	font-family: "Century Gothic", Calibri, serif;
+	margin-bottom: 20px;
+	padding:5px;
+	overflow:scroll;
+	text-align:center;
+}
+
+#cart {
+	background-color: black;
+	color: white;
+	margin-top: 15px;
+	text-align:center;
+	font-family: "Century Gothic", Calibri, serif;
+	padding: 5px;
+	font-size: 34px
+}
+
+#checkout {
+	background-color: brown;
+	margin-bottom: 15px;
+	font-family: "Century Gothic", Calibri, serif;
+	padding: 5px;
+	font-size: 20px
+}
+#checkout h1 {
+	font-size: 30px;
 }
 
 #gototop {
@@ -175,8 +218,6 @@ video {
 #gototop:hover {
     text-align:center;
     font-family:'Century Gothic';
-
-
 }
 
 #footer {

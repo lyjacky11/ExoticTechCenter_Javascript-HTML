@@ -6,7 +6,112 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
   </head>
 <body>
+<script type="text/javascript">
+var costItem1, costItem2, costItem3, costItem4, costItem5, costItem6, subTotal, tax, total;
 
+function placeOrder() {
+
+var name = document.order.name.value;
+var tel = document.order.tel.value;
+var email = document.order.email.value;
+var cardholder = document.order.cardholder.value;
+var address = document.order.address.value;
+var apt = document.order.apt.value;
+var cardnumber = document.order.cardnumber.value;
+var city = document.order.city.value;
+var postal = document.order.postal.value;
+var month = document.order.month.value;
+var year = document.order.year.value;
+var province = document.order.province.value;
+var country = document.order.country.value;
+var cvv = document.order.cvv.value;
+var shipping = document.order.shipping.value;
+var cardtype = document.order.cardtype.value;
+
+var item1 = document.order.R9390X.value;
+var item2 = document.order.980Ti.value;
+var item3 = document.order.760T.value;
+var item4 = document.order.H440.value;
+var item5 = document.order.Blackwidow.value;
+var item6 = document.order.G502.value;
+var item1Chosen = document.order.t1.checked;
+var item2Chosen = document.order.980Ti.checked;
+var item3Chosen = document.order.760T.checked;
+var item4Chosen = document.order.H440.checked;
+var item5Chosen = document.order.Blackwidow.checked;
+var item6Chosen = document.order.G502.checked;
+
+if(item1Chosen) costItem1 = 599.99;
+if(item2Chosen) costItem2 = 649.99;
+if(item3Chosen) costItem3 = 299.99;
+if(item4Chosen) costItem4 = 149.99;
+if(item5Chosen) costItem5 = 249.99;
+if(item6Chosen) costItem6 = 149.99;
+
+subTotal = costItem1 + costItem2 + costItem3 + costItem4 + costItem5 + costItem6;
+
+document.open();
+document.write("<HTML><HEAD><TITLE>Order Confirmation - Exotic Tech Center</TITLE></HEAD>");
+document.write("<body>");
+document.write("<H2>Your order has been successfully completed! Please print your invoice for future reference. Thank you for shopping with us!</H2>");
+
+document.write("<B> Billing Information </B><BR>");
+document.write("<B> Full Name: </B>"+ name + "<BR>");
+document.write("<B>e-Mail: </B>" + email + "<BR>");
+document.write("<B>Address: </B>" + address + "<BR>");
+document.write("<B>Apt/Unit: </B>" + apt + "<BR>");
+document.write("<B>City: </B>" + city + "<BR>");
+document.write("<B>Postal Code: </B>" + postal + "<BR>");
+document.write("<B>Province: </B>" + province + "<BR>");
+document.write("<B>Country: </B>" + country + "<BR>");
+document.write("<B>Shipping Method: </B>" + shipping + "<BR>");
+document.write("<B>Phone Number: </B>" + tel + "<BR><BR>");
+
+document.write("<B> Payment Options </B><BR>");
+document.write("<B>Name of cardholder: </B>" + cardholder + "<BR>");
+document.write("<B>Card number: </B>" + cardnumber + "<BR>");
+document.write("<B>Expiry Date: </B>" + month + year + "<BR>");
+document.write("<B>CVV: </B>" + cvv + "<BR>");
+document.write("<B>Card Type: </B>" + cardtype + "<BR>");
+
+document.write("<B> Purchased Items </B><BR>")
+if(item1Chosen)
+document.write(item1 + costItem1 + "<br>");
+if(item2Chosen)
+document.write(item2 + costItem2 + "<br>");
+if(item3Chosen)
+document.write(item3 + costItem3 + "<br>");
+if(item4Chosen)
+document.write(item4 + costItem4 + "<br>");
+if(item5Chosen)
+document.write(item5 + costItem5 + "<br>");
+if(item6Chosen)
+document.write(item6 + costItem6 + "<br>");
+
+document.write("<br><br>Thank you " + name + "!<br>");
+document.write("<br>Your order has been processed! <br>Thank you for choosing Exotic Tech Center!");
+tax = subTotal *0.13;
+total = subTotal + tax;
+
+document.write("<center><h1>INVOICE</h1></center><BR>");
+document.write("<b>SubTotal: $</b>" +subTotal.toFixed(2)+ "<BR>");
+document.write("<b>Tax: $</b>" + tax.toFixed(2)+ "<BR>");
+document.write("<b>Total: $</b>" + total.toFixed(2)+ "<BR>");
+document.write("<br>");
+document.write("<b>Order was completed on: </b>" + Date());
+document.write("<br><br>REFUND POLICY: Please contact Exotic Tech Center before 30 days of purchase for a full refund. ");
+document.write("<br>Terms and conditions apply. Please call us toll-free for more information. ");
+document.write("<br>Copyright &copy; 2016 Exotic Tech Center&trade;. All Rights &reg; Reserved..");
+
+window.print();
+document.location.href = "index.html";
+
+document.write("</BODY>");
+document.write("</HTML>");
+
+document.close();
+}
+</script>
 <a href="index.html"><div id="header">
   <img src="ExoticTechCenterNoWords.png" style="width:150px; height:110px; text-align: left;" >
   Exotic Tech Center
@@ -25,7 +130,7 @@ Search Our Partners' Inventory:
     s.parentNode.insertBefore(gcse, s);
   })();
 </script>
-<gcse:search></gcse:search>
+  <gcse:search></gcse:search>
 <div id="nav">
   <ul>
     <li><a href="index.html">Home</a></li>
@@ -69,12 +174,12 @@ Search Our Partners' Inventory:
   </tr>
   <tr>
   <form action="">
-	<td><input type="checkbox" name="products" value="R9390X"></td>
-	<td><input type="checkbox" name="products" value="980Ti"></td>
-	<td><input type="checkbox" name="products" value="760T"></td>
-	<td><input type="checkbox" name="products" value="H440"></td>
-	<td><input type="checkbox" name="products" value="Blackwidow"></td>
-	<td><input type="checkbox" name="products" value="G502"></td>
+	<td><input type="checkbox" name="R9390X" value="R9390X"></td>
+	<td><input type="checkbox" name="980Ti" value="980Ti"></td>
+	<td><input type="checkbox" name="760T" value="760T"></td>
+	<td><input type="checkbox" name="H440" value="H440"></td>
+	<td><input type="checkbox" name="Blackwidow" value="Blackwidow"></td>
+	<td><input type="checkbox" name="G502" value="G502"></td>
   </form>
   </tr>
 </table>
@@ -91,13 +196,14 @@ Your Shopping Cart
 <td></td>
 <td><h1>Payment Options:</h1></td>
 </tr>
+<form>
 <tr>
   <td>Full Name:<br>
-  <input type="text" name="fullname"><br></td>
+  <input type="text" name="name"><br></td>
   <td>e-Mail:<br>
-  <input type="text" name="email:"><br></td>
+  <input type="text" name="email"><br></td>
   <td>Name of cardholder:<br>
-  <input type="text" name="cardname"><br></td>
+  <input type="text" name="cardholder"><br></td>
 </tr>
 <tr>
 <td>Address:<br>
@@ -138,7 +244,7 @@ Your Shopping Cart
 </tr>
 <tr>
 <td>Province:<br>
-  <select>
+  <select name="province">
 	<option value="AB">Alberta</option>
 	<option value="BC">British Columbia</option>
 	<option value="MB">Manitoba</option>
@@ -155,7 +261,7 @@ Your Shopping Cart
 	<option value="Other">N/A (Other)</option>
 </select></td>
   <td>Country:<br>
-  <select>
+  <select name="country">
 	<option value="CAN">Canada</option>
 	<option value="MEX">Mexico</option>
 	<option value="USA">United States</option>
@@ -174,7 +280,8 @@ Your Shopping Cart
 		<option value="Purolator Ground International">Purolator Ground International (15-20 Business Days)</option>
 		<option value="Purolator Express International">Purolator Express International (3-6 Business Days)</option>
     </select></td>
-<td></td>
+<td>Phone Number (XXX-XXX-XXXX):<br>
+  <input type="text" name="tel" maxlength="12"<br></td>
 <td>Card Type:<br>
 <select name="cardtype">
   <option value="MasterCard">MasterCard</option>
@@ -185,8 +292,9 @@ Your Shopping Cart
   <option value="Prepaid">Prepaid VISA/MasterCard</option>
 </select></td>
 </tr>
-<td colspan="3" align="center"><a href="Goodbye.html"><img src="checkout-logo-large.png" alt="Check out with PayPal" onClick="alert('Your order has been successfully completed! Please print your invoice for future reference. Thank you!')"/></td>
+<td colspan="3" align="center"><img onclick="placeOrder();" src="checkout-logo-large.png" alt="Check out with PayPal" onclick="alert(Your order has been successfully completed! Please print your invoice for future reference. Thank you for shopping with us!)"/></td>
 </tr>
+</form>
 </table>
 </div>
 

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head>
+ <head>
   	<meta charset="utf-8">
 	<title>Checkout - Exotic Tech Center</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
@@ -8,8 +8,8 @@
 <body>
 <script type="text/javascript">
 function placeOrder() {
-    alert("Please wait while we process the transaction with your payment provider...");
-	var name = document.order.name.value;
+
+    var name = document.order.name.value;
     var tel = document.order.tel.value;
     var email = document.order.email.value;
     var cardholder = document.order.cardholder.value;
@@ -25,7 +25,7 @@ function placeOrder() {
     var cvv = document.order.cvv.value;
     var shipping = document.order.shipping.value;
     var cardtype = document.order.cardtype.value;
-	
+
     var item1 = document.order.item1.value;
     var item2 = document.order.item2.value;
     var item3 = document.order.item3.value;
@@ -39,7 +39,7 @@ function placeOrder() {
     var item4Chosen = document.order.item4.checked;
     var item5Chosen = document.order.item5.checked;
     var item6Chosen = document.order.item6.checked;
-	
+    
     if (item1Chosen) {
         var costItem1 = 599.99;
     }
@@ -64,77 +64,68 @@ function placeOrder() {
     document.open();
     document.write("<HTML><HEAD><TITLE>Order Confirmation - Exotic Tech Center</TITLE></HEAD>");
     document.write("<body>");
-    document.write("<H2>Your order has been successfully completed!</H2><h3>Don't forget to print your invoice for future reference.<br>Thank you for shopping with us!</h3>");
+    document.write("<H2>Your order has been successfully completed! Please print your invoice for future reference. Thank you for shopping with us!</H2>");
 
-    document.write("<h3><B> Billing Information </B></h3>");
+    document.write("<B> Billing Information </B><BR>");
     document.write("<B> Full Name: </B>" + name + "<BR>");
-    document.write("<B>Email: </B>" + email + "<BR>");
+    document.write("<B>e-Mail: </B>" + email + "<BR>");
     document.write("<B>Address: </B>" + address + "<BR>");
     document.write("<B>Apt/Unit: </B>" + apt + "<BR>");
     document.write("<B>City: </B>" + city + "<BR>");
     document.write("<B>Postal Code: </B>" + postal + "<BR>");
     document.write("<B>Province: </B>" + province + "<BR>");
     document.write("<B>Country: </B>" + country + "<BR>");
-	
-	document.write("<h3><B> Shipping Fulfillment Information </B></h3>");
     document.write("<B>Shipping Method: </B>" + shipping + "<BR>");
     document.write("<B>Phone Number: </B>" + tel + "<BR><BR>");
 
-    document.write("<h3><B> Payment Options </B></h3>");
+    document.write("<B> Payment Options </B><BR>");
     document.write("<B>Name of cardholder: </B>" + cardholder + "<BR>");
     document.write("<B>Card number: </B>" + cardnumber + "<BR>");
-    document.write("<B>Expiry Date: </B>" + month + "/" + year + "<BR>");
+    document.write("<B>Expiry Date: </B>" + month + year + "<BR>");
     document.write("<B>CVV: </B>" + cvv + "<BR>");
     document.write("<B>Card Type: </B>" + cardtype + "<BR>");
 
-    document.write("<h3><B> Shipment #1 (Items Purchased): </B></h3>");
+    document.write("<B> Purchased Items </B><BR>");
 
     if (item1Chosen) {
-        document.write(item1 + " - $" + costItem1 + "<br>");
+        document.write(item1 + costItem1 + "<br>");
     }
     if (item2Chosen) {
-        document.write(item2 + " - $" + costItem2 + "<br>");
+        document.write(item2 + costItem2 + "<br>");
     }
     if (item3Chosen) {
-        document.write(item3 + " - $" + costItem3 + "<br>");
+        document.write(item3 + costItem3 + "<br>");
     }
     if (item4Chosen) {
-        document.write(item4 + " - $" + costItem4 + "<br>");
+        document.write(item4 + costItem4 + "<br>");
     }
     if (item5Chosen) {
-        document.write(item5 + " - $" + costItem5 + "<br>");
+        document.write(item5 + costItem5 + "<br>");
     }
     if (item6Chosen) {
-        document.write(item6 + " - $" + costItem6 + "<br>");
+        document.write(item6 + costItem6 + "<br>");
     }
-	
+
+    document.write("<br><br>Thank you " + name + "!<br>");
+    document.write("<br>Your order has been processed! <br>Thank you for choosing Exotic Tech Center!");
+
     var tax = subTotal * 0.13;
     var total = subTotal + tax;
 
-    document.write("<center><h1>INVOICE</h1></center>");
-	document.write("<h3><B>Summary</B></h3>");
+    document.write("<center><h1>INVOICE</h1></center><BR>");
     document.write("<b>SubTotal: $</b>" + subTotal.toFixed(2) + "<BR>");
     document.write("<b>Tax: $</b>" + tax.toFixed(2) + "<BR>");
     document.write("<b>Total: $</b>" + total.toFixed(2) + "<BR>");
     document.write("<br>");
-    document.write("<b>Order was completed on: </b><br>" + Date());
-	
-	document.write("<h3><B>REFUND POLICY</B></h3>");
-    document.write("Please contact Exotic Tech Center before 30 days of purchase for a full refund.");
-    document.write("<br>Terms and conditions apply. Please contact us to learn more.<br>");
-    document.write("<h6><br>Copyright &copy; 2016 Exotic Tech Center&trade;. All Rights &reg; Reserved.</h6>");
+    document.write("<b>Order was completed on: </b>" + Date());
+    document.write("<br><br>REFUND POLICY: Please contact Exotic Tech Center before 30 days of purchase for a full refund. ");
+    document.write("<br>Terms and conditions apply. Please call us toll-free for more information. ");
+    document.write("<br>Copyright &copy; 2016 Exotic Tech Center&trade;. All Rights &reg; Reserved.");
     document.write("</BODY>");
     document.write("</HTML>");
     document.close();
-	
-	if (confirm("Do you want to print your invoice now? Click OK to Print or Cancel to go back.")) {
-	window.print();
-	} else {
-	document.location.href = "index.html";	
-	}
 }
 </script>
-
 <a href="index.html"><div id="header">
   <img src="ExoticTechCenterNoWords.png" style="width:150px; height:110px; text-align: left;" >
   Exotic Tech Center
@@ -181,13 +172,14 @@ function placeOrder() {
     <h3>Check the box below each item you want to buy!</h3>
   </tr>
   <tr>
-  <form name="order">
-	<td><input type="checkbox" name="item1" value="MSI Radeon R9 390X GAMING 8G">Add To Cart</td>
-	<td><input type="checkbox" name="item2" value="EVGA GeForce GTX 980 Ti GAMING">Add To Cart</td>
-	<td><input type="checkbox" name="item3" value="Corsair Graphite Series 760T Gaming Case">Add To Cart</td>
-	<td><input type="checkbox" name="item4" value="NZXT H440 Mid Tower Gaming Case">Add To Cart</td>
-	<td><input type="checkbox" name="item5" value="Razer BlackWidow Chroma Mechanical Keyboard">Add To Cart</td>
-	<td><input type="checkbox" name="item6" value="Logitech G502 Proteus Spectrum RGB Gaming Mouse">Add To Cart</td>
+  <form name ="order">
+	<td><input type="checkbox" name="item1" value="R9390X"></td>
+	<td><input type="checkbox" name="item2" value="i980Ti"></td>
+	<td><input type="checkbox" name="item3" value="i760T"></td>
+	<td><input type="checkbox" name="item4" value="H440"></td>
+	<td><input type="checkbox" name="item5" value="Blackwidow"></td>
+	<td><input type="checkbox" name="item6" value="G502"></td>
+
   </tr>
 </table>
 </div>
@@ -197,6 +189,7 @@ Your Shopping Cart
 </div>
 
 <div id="checkout">
+
 <table align="center" style="width:100%">
 <tr>
 <td><h1>Billing Information:</h1></td>
@@ -257,7 +250,7 @@ Your Shopping Cart
 	<option value="NB">New Brunswick</option>
 	<option value="NL">Newfoundland and Labrador</option>
 	<option value="NS">Nova Scotia</option>
-	<option value="ON" selected>Ontario</option>
+	<option value="ON">Ontario</option>
 	<option value="PE">Prince Edward Island</option>
 	<option value="QC">Quebec</option>
 	<option value="SK">Saskatchewan</option>
@@ -268,9 +261,9 @@ Your Shopping Cart
 </select></td>
   <td>Country:<br>
   <select name="country">
-	<option value="Canada">Canada</option>
-	<option value="Mexico">Mexico</option>
-	<option value="United States">United States</option>
+	<option value="CAN">Canada</option>
+	<option value="MEX">Mexico</option>
+	<option value="USA">United States</option>
 	<option value="Other">International (Other)</option>
 </select></td>
 <td>CVV:<br>
@@ -297,15 +290,13 @@ Your Shopping Cart
   <option value="AmericanExpress">American Express</option>
   <option value="Prepaid">Prepaid VISA/MasterCard</option>
 </select></td>
-</tr>
-<tr>
-<td colspan="3" align="center">
-<img onclick="placeOrder();" src="checkout-logo-large.png"/>
-</td>
-</tr>
+
+<input type="button" name="order" value="Order Now!" onclick="placeOrder();">
 </table>
 </form>
 </div>
+
+
 <div id="gototop">
 <a href="#top">Back To Top</a>
 </div>

@@ -7,8 +7,23 @@
 </head>
 <body>
 <script type="text/javascript">
+
+// Sets the cost of all items to $0.00 in the start
+var costItem1 = 0.00;
+var costItem2 = 0.00;
+var costItem3 = 0.00;
+var costItem4 = 0.00;
+var costItem5 = 0.00;
+var costItem6 = 0.00;
+
+// The function (placeOrder) will be called when the checkout button is clicked by the user
 function placeOrder() {
+	// While the last 4 digits of the card number is not 4 digits, then the program will prompt the user to enter the last 4-digits of the card number
+	while (digit = prompt("Please re-enter the last 4-digits of the card number for security purposes:"), digit.length != 4);
+	// Pop-up will be shown to tell the user the transaction is processing (pop-up will appear before invoice page is shown)
     alert("Please wait while we process the transaction with your payment provider...");
+
+	// Defines all the variables that are used in the form in the HTML code
 	var name = document.order.name.value;
     var tel = document.order.tel.value;
     var email = document.order.email.value;
@@ -25,47 +40,54 @@ function placeOrder() {
     var cvv = document.order.cvv.value;
     var shipping = document.order.shipping.value;
     var cardtype = document.order.cardtype.value;
-	
+	// Defines the item checkboxes with variable names correspondingly
     var item1 = document.order.item1.value;
     var item2 = document.order.item2.value;
     var item3 = document.order.item3.value;
     var item4 = document.order.item4.value;
     var item5 = document.order.item5.value;
     var item6 = document.order.item6.value;
-	
+	// Defines checked items with variable names respectively
     var item1Chosen = document.order.item1.checked;
     var item2Chosen = document.order.item2.checked;
     var item3Chosen = document.order.item3.checked;
     var item4Chosen = document.order.item4.checked;
     var item5Chosen = document.order.item5.checked;
     var item6Chosen = document.order.item6.checked;
-	
+	// If Item 1 is checked, then the price will be set to its respective variable
     if (item1Chosen) {
-        var costItem1 = 599.99;
+        costItem1 = 599.99;
     }
+	// If Item 2 is checked, then the price will be set to its respective variable
     if (item2Chosen) {
-        var costItem2 = 649.99;
+        costItem2 = 649.99;
     }
+	// If Item 3 is checked, then the price will be set to its respective variable
     if (item3Chosen) {
-        var costItem3 = 299.99;
+        costItem3 = 299.99;
     }
+	// If Item 4 is checked, then the price will be set to its respective variable
     if (item4Chosen) {
-        var costItem4 = 149.99;
+        costItem4 = 149.99;
     }
+	// If Item 5 is checked, then the price will be set to its respective variable
     if (item5Chosen) {
-        var costItem5 = 249.99;
+        costItem5 = 249.99;
     }
+	// If Item 6 is checked, then the price will be set to its respective variable
     if (item6Chosen) {
-        var costItem6 = 149.99;
+        costItem6 = 149.99;
     }
-
+	// The subtotal will be calculated by adding the item's prices together using their corresponding variable values
     var subTotal = costItem1 + costItem2 + costItem3 + costItem4 + costItem5 + costItem6;
-
+	// Opens a new document with the information entered by the user
     document.open();
+	// Defines a title for the page that is opened
     document.write("<HTML><HEAD><TITLE>Order Confirmation - Exotic Tech Center</TITLE></HEAD>");
     document.write("<body>");
-    document.write("<H2>Your order has been successfully completed!</H2><h3>Don't forget to print your invoice for future reference.<br>Thank you for shopping with us!</h3>");
-
+	// Prints a heading message to tell the user the order has been completed
+    document.write("<H3>Your order has been successfully completed! Thank you for shopping with us!</h3><h3>Don't forget to print your invoice for future reference.</h3>");
+	// Outputs the information based on what the user entered in the HTML form (billing information form)
     document.write("<h3><B> Billing Information </B></h3>");
     document.write("<B> Full Name: </B>" + name + "<BR>");
     document.write("<B>Email: </B>" + email + "<BR>");
@@ -75,63 +97,84 @@ function placeOrder() {
     document.write("<B>Postal Code: </B>" + postal + "<BR>");
     document.write("<B>Province: </B>" + province + "<BR>");
     document.write("<B>Country: </B>" + country + "<BR>");
-	
 	document.write("<h3><B> Shipping Fulfillment Information </B></h3>");
     document.write("<B>Shipping Method: </B>" + shipping + "<BR>");
     document.write("<B>Phone Number: </B>" + tel + "<BR><BR>");
-
+	// Outputs the information based on what the user entered in the HTML form (payment options form)
     document.write("<h3><B> Payment Options </B></h3>");
     document.write("<B>Name of cardholder: </B>" + cardholder + "<BR>");
-    document.write("<B>Card number: </B>" + cardnumber + "<BR>");
+    document.write("<B>Card number: **** **** **** </B>" + digit + "<BR>");
     document.write("<B>Expiry Date: </B>" + month + "/" + year + "<BR>");
-    document.write("<B>CVV: </B>" + cvv + "<BR>");
+    document.write("<B>CVV: </B> ***  <BR>");
     document.write("<B>Card Type: </B>" + cardtype + "<BR>");
-
+	// Outputs the items that the user has purchased (checked items)
     document.write("<h3><B> Shipment #1 (Items Purchased): </B></h3>");
-
+	// If Item 1 was checked, then the program will output the respective item name and price
     if (item1Chosen) {
         document.write(item1 + " - $" + costItem1 + "<br>");
     }
+	// If Item 2 was checked, then the program will output the respective item name and price
     if (item2Chosen) {
         document.write(item2 + " - $" + costItem2 + "<br>");
     }
+	// If Item 3 was checked, then the program will output the respective item name and price
     if (item3Chosen) {
         document.write(item3 + " - $" + costItem3 + "<br>");
     }
+	// If Item 4 was checked, then the program will output the respective item name and price
     if (item4Chosen) {
         document.write(item4 + " - $" + costItem4 + "<br>");
     }
+	// If Item 5 was checked, then the program will output the respective item name and price
     if (item5Chosen) {
         document.write(item5 + " - $" + costItem5 + "<br>");
     }
+	// If Item 6 was checked, then the program will output the respective item name and price
     if (item6Chosen) {
         document.write(item6 + " - $" + costItem6 + "<br>");
     }
-	
+	// Tax will be calculated by taking the subtotal from above and multiplied by 13%
     var tax = subTotal * 0.13;
+	// Total price will be calculated by adding the subtotal and tax values together
     var total = subTotal + tax;
-
-    document.write("<center><h1>INVOICE</h1></center>");
+	// Prints a heading labeled INVOICE
+    document.write("<center><h2>INVOICE</h2></center>");
+	// Prints a subtitle labeled Summary
 	document.write("<h3><B>Summary</B></h3>");
+	// Program outputs the value of subtotal rounded to two decimal places
     document.write("<b>SubTotal: $</b>" + subTotal.toFixed(2) + "<BR>");
+	// Program outputs the value of tax rounded to two decimal places
     document.write("<b>Tax: $</b>" + tax.toFixed(2) + "<BR>");
+	// Program outputs the total price rounded to two decimal places
     document.write("<b>Total: $</b>" + total.toFixed(2) + "<BR>");
     document.write("<br>");
-    document.write("<b>Order was completed on: </b><br>" + Date());
-	
+	//Program outputs the date order was completed on
+    document.write("<b>Order was completed on: </b>" + Date());
+	//Prints heading labeled REFUND POLICY
 	document.write("<h3><B>REFUND POLICY</B></h3>");
+	//Outputs the refund policy and other information
     document.write("Please contact Exotic Tech Center before 30 days of purchase for a full refund.");
-    document.write("<br>Terms and conditions apply. Please contact us to learn more.<br>");
-    document.write("<h6><br>Copyright &copy; 2016 Exotic Tech Center&trade;. All Rights &reg; Reserved.</h6>");
+    document.write("<br>Terms and conditions apply. Please contact us for more information.");
+    document.write("<h6>Copyright &copy; 2016 Exotic Tech Center&trade;. All Rights &reg; Reserved.</h6>");
+	// Asks if the user wants to print the invoice page, if user clicks OK then the print screen will be launched
+	if (confirm("Do you want to print your invoice now?")) {
+	window.print();
+	}
+	// Asks if the user wants to finish their shopping and go to the final page, if user clicks OK then the goodbye page will be displayed
+	if (confirm("Do you want to end the secure session?")) {
+	document.location.href = "Goodbye.html";
+	}
+	// Two buttons will be placed at the bottom of the page to allow the user to print their invoice or finish their shopping respectively
+	document.write("<form>");
+	// If clicked, the print screen will be launched to print the invoice
+	document.write("<INPUT TYPE='button' onClick='window.print()' value='Print Invoice'>");
+	// If clicked, user will be redirected to the goodbye page and finish their shopping
+	document.write("<a href='Goodbye.html'><INPUT TYPE='button' value='End Secure Session'>");
+	document.write("</form>")
     document.write("</BODY>");
     document.write("</HTML>");
-    document.close();
-	
-	if (confirm("Do you want to print your invoice now? Click OK to Print or Cancel to go back.")) {
-	window.print();
-	} else {
-	document.location.href = "index.html";	
-	}
+	// Closes and finishes writing to the opened page
+	document.close();
 }
 </script>
 
@@ -152,7 +195,7 @@ function placeOrder() {
 </div>
 <div id="related">
 <table style="width:175%">
-
+<form name="order">
   <tr>
     <td><h2><a href="R9390X.html"><img src="r9390x-product.jpg" width="300" border="4px" height="175" alt="Image"></h2></td>
     <td><h2><a href="980Ti.html"><img src="980ti-product.jpg" width="300" border="4px" height="175" alt="Image"></h2></td>		
@@ -181,7 +224,6 @@ function placeOrder() {
     <h3>Check the box below each item you want to buy!</h3>
   </tr>
   <tr>
-  <form name="order">
 	<td><input type="checkbox" name="item1" value="MSI Radeon R9 390X GAMING 8G">Add To Cart</td>
 	<td><input type="checkbox" name="item2" value="EVGA GeForce GTX 980 Ti GAMING">Add To Cart</td>
 	<td><input type="checkbox" name="item3" value="Corsair Graphite Series 760T Gaming Case">Add To Cart</td>
@@ -300,7 +342,12 @@ Your Shopping Cart
 </tr>
 <tr>
 <td colspan="3" align="center">
-<img onclick="placeOrder();" src="checkout-logo-large.png"/>
+<br><img onclick="placeOrder();" src="checkout-logo-large.png"/>
+</td>
+</tr>
+<tr>
+<td colspan="3" align="center">
+<img src="PayPal_mark_37x23.gif" style="margin-right:7px;"><span style="font-size:11px; font-family: Arial, Verdana;">The safer, easier way to pay.</span>
 </td>
 </tr>
 </table>
